@@ -28,40 +28,36 @@ const testimonials = [
 const Testimonials = () => {
   return (
     <section
-    id="testimonials"
-    className="bg-slate-950 py-32 flex justify-center"
+      id="testimonials"
+      className="bg-slate-950 py-16 sm:py-20 md:py-32 flex justify-center"
     >
         <div className="w-full max-w-6xl px-6">
 
             {/* Heading */}
             <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-cyan-400">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-cyan-400">
                 TESTIMONIALS
-            </p>
+              </p>
 
-            <h2 className="max-w-3xl text-5xl font-bold leading-tight text-white">
+              <h2 className="max-w-3xl text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
                 What Our Users Say
-            </h2>
+              </h2>
 
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-400">
+              <p className="mt-6 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">
                 Thousands of students are improving their interview skills with AI.
-            </p>
-
+              </p>
             </div>
 
             {/* Cards */}
-            <div className="mx-auto mt-20 flex justify-center gap-8">
-
-            {testimonials.map((item) => (
+            <div className="mx-auto mt-12 flex flex-col items-center gap-6 md:mt-20 md:flex-row md:justify-center md:gap-8">
+              {testimonials.map((item) => (
                 <div
-                key={item.name}
-                className="w-[340px] flex-shrink-0"
+                  key={item.name}
+                  className="w-full max-w-sm md:w-[340px] md:flex-shrink-0"
                 >
-                <TestimonialCard {...item} />
+                  <TestimonialCard {...item} />
                 </div>
-            ))}
-
+              ))}
             </div>
 
         </div>

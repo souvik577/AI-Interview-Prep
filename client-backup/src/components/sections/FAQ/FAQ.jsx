@@ -28,37 +28,35 @@ const FAQ = () => {
   return (
     <section
       id="faq"
-      className="bg-slate-950 py-32 flex justify-center"
+      className="bg-slate-950 py-16 sm:py-20 md:py-32 flex justify-center"
     >
       <div className="w-full max-w-6xl px-6">
 
         {/* Heading */}
         <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-cyan-400">
             FAQ
           </p>
 
-          <h2 className="max-w-3xl text-5xl font-bold leading-tight text-white">
+          <h2 className="max-w-3xl text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
             Frequently Asked Questions
           </h2>
 
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-400">
+          <p className="mt-6 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">
             Everything you need to know before getting started.
           </p>
-
         </div>
 
         {/* FAQ Items */}
-        <div className="mx-auto mt-20 flex w-full justify-center">
-            <div className="w-full max-w-4xl space-y-10">
-                {faqs.map((faq, index) => (
-                <FAQItem
-                    key={index}
-                    {...faq}
-                />
-                ))}
-            </div>
+        <div className="mx-auto mt-12 flex w-full justify-center md:mt-20">
+          <div className="w-full max-w-4xl space-y-6 sm:space-y-8 md:space-y-10">
+            {faqs.map((faq, index) => (
+              <FAQItem
+                key={index}
+                {...faq}
+              />
+            ))}
+          </div>
         </div>
 
       </div>
