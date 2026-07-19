@@ -2,18 +2,17 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { FaRobot } from "react-icons/fa";
-import { HiMenu, HiX } from "react-icons/hi";
-import Container from "./Container";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 border-b border-slate-800 bg-slate-950/80 backdrop-blur-md">
-      <Container className="flex h-16 items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-slate-800 bg-slate-950/80 backdrop-blur-md">
+      <div className="flex h-16 items-center justify-between pl-4 pr-0">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <FaRobot className="text-cyan-400 text-2xl" />
+          <FaRobot className="text-2xl text-cyan-400" />
           <span className="text-xl font-bold text-white">
             AI<span className="text-cyan-400">Prep</span>
           </span>
@@ -47,17 +46,18 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white text-3xl"
           onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden ml-auto p-0 text-white"
+          aria-label="Toggle menu"
         >
-          {isOpen ? <HiX /> : <HiMenu />}
+          {isOpen ? <X size={30} /> : <Menu size={30} />}
         </button>
-      </Container>
+      </div>
 
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden border-t border-slate-800 bg-slate-950">
-          <Container className="py-6">
+          <div className="px-4 py-6">
             <nav className="flex flex-col gap-5 text-slate-300">
               <a
                 href="#features"
@@ -97,7 +97,7 @@ const Navbar = () => {
                 </Link>
               </div>
             </nav>
-          </Container>
+          </div>
         </div>
       )}
     </header>
