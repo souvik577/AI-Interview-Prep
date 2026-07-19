@@ -4,7 +4,6 @@ import {
   BarChart3,
 } from "lucide-react";
 
-import Container from "../../layout/Container";
 import FeatureCard from "./FeatureCard";
 
 const features = [
@@ -31,44 +30,38 @@ const features = [
 const Features = () => {
   return (
     <section
-        id="features"
-        className="bg-slate-950 py-24 flex justify-center"
-        >
-        <div className="w-full max-w-6xl px-6">
+      id="features"
+      className="bg-slate-950 py-16 sm:py-20 lg:py-24"
+    >
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
+        {/* Heading */}
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-cyan-400 sm:text-sm">
+            FEATURES
+          </p>
 
-            {/* Heading */}
-            <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
+          <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
+            Everything You Need
+            <br />
+            to Ace Interviews
+          </h2>
 
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-cyan-400">
-                FEATURES
-            </p>
-
-            <h2 className="max-w-3xl text-5xl font-bold leading-tight tracking-tight text-white">
-                Everything You Need
-                <br />
-                to Ace Interviews
-            </h2>
-
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-400">
-                From AI mock interviews to resume analysis and performance tracking,
-                everything is available in one modern platform.
-            </p>
-
-            </div>
-
-            {/* Cards */}
-            <div className="mx-auto mt-20 flex justify-center gap-8">
-                {features.map((feature) => (
-                    <div
-                    key={feature.title}
-                    className="w-[340px] flex-shrink-0"
-                    >
-                    <FeatureCard {...feature} />
-                    </div>
-                ))}
-            </div>
-
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">
+            From AI mock interviews to resume analysis and performance tracking,
+            everything is available in one modern platform.
+          </p>
         </div>
+
+        {/* Cards */}
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3 lg:gap-8">
+          {features.map((feature) => (
+            <FeatureCard
+              key={feature.title}
+              {...feature}
+            />
+          ))}
+        </div>
+      </div>
     </section>
   );
 };
